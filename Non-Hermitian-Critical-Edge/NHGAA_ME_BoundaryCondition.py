@@ -6,7 +6,7 @@ from NHmodel import NHGAA_ME
 import mpmath as mp
 import pandas as pd
 
-mp.dps=300
+mp.mp.dps=300
 pi=mp.pi
 
 bd_all=[0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
@@ -45,7 +45,3 @@ if __name__=='__main__':
     Data=pd.DataFrame(Res)
     Data.to_csv('EigenvalueData_BoundaryCondition.csv',index=False)
     #PcTest(Res)
-
-
-    
-    

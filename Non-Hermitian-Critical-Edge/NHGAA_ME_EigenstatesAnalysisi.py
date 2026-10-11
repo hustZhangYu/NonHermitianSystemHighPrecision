@@ -4,11 +4,10 @@ import mpmath as mp
 from NHmodel import NHGAA, NHGAA_ME
 from matplotlib import pyplot as plt
 import numpy as np
-from NHPlot import PlotIPR
 import multiprocessing 
 import pandas as pd
 
-mp.dps=400
+mp.mp.dps=400
 pi=mp.pi
 L_all=[144,233,377,610,987]
 
@@ -192,5 +191,3 @@ if __name__=='__main__':
     # EigenstatesScaling()
     # MultiprocessingCalcualtion()
     # GetEigenstate(1)
-    
-    

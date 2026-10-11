@@ -4,11 +4,10 @@ import mpmath as mp
 from NHmodel import NHGAA, NHGAA_ME
 from matplotlib import pyplot as plt
 import numpy as np
-from NHPlot import PlotIPR
 import multiprocessing 
 
 
-mp.dps=300
+mp.mp.dps=300
 pi=mp.pi
 
 
@@ -34,6 +33,7 @@ def GetEigenvalue(H):
 def Main():
     #主程序
 #  initial parameters
+    from NHPlot import PlotIPR  # Required only by this plotting route.
     L=610
     v_all=[0.1,0.5,1,5,10]
     theta_all=[-pi/3,0,pi/3,pi/2,pi]
@@ -64,6 +64,7 @@ def Main():
 def func(v):
 # 该函数与并行的代码共同使用
 # v 输入的参数代表pool当中用于并行计算的参数
+    from NHPlot import PlotIPR  # Required only by this plotting route.
     L=610
     theta_all=[-pi/3,0,pi/3,pi/2,pi]
     bd=0

@@ -7,7 +7,7 @@ from matplotlib import  pyplot as plt
 
 
 
-mp.dps=200
+mp.mp.dps=200
 pi=mp.pi
 
 def ExactGamma(Lambda,theta):
@@ -92,5 +92,3 @@ def CalculateTheLE_TransferMatrix():
 if __name__=='__main__':
 
     CalculateTheLE_TransferMatrix()
-
-

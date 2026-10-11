@@ -2,17 +2,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-def load_data(file_path):
-    with open(file_path, 'r') as file:
-        data = pd.read_csv(file)
-    return data
+from data_io import load_data, parse_complex_string
 
-def parse_complex_string(s):
-    # 移除所有空白字符
-    s=s.replace('(','')
-    s=s.replace(')','')
-    s = s.replace(' ', '')
-    s=s.replace('NaN','')
+
     
 
 

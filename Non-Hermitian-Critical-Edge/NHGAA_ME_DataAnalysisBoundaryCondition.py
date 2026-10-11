@@ -3,40 +3,11 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 import numpy as np
-import re
 
-def load_data(file_path):
-    with open(file_path, 'r') as file:
-        data = pd.read_csv(file)
-    return data
+from data_io import load_data, parse_complex_string
 
 
-def parse_complex_string(s):
-    # 移除所有空白字符
-    s=s.replace('(','')
-    s=s.replace(')','')
-    s = s.replace(' ', '')
-    
-    # 使用正则表达式匹配实部和虚部
-    match = re.match(r'([-+]?\d*\.?\d*)?([-+]?\d*\.?\d*)[ji]?', s)
-    
-    if match:
-        real = match.group(1)
-        imag = match.group(2)
-        
-        # 处理只有虚部的情况
-        if real == '' and imag.startswith(('+', '-')):
-            real = '0'
-        # 处理只有实部的情况
-        elif imag == '':
-            imag = '0'
-        # 处理虚部没有系数的情况
-        elif imag in ('+', '-'):
-            imag += '1'
-        
-        return complex(float(real or 0), float(imag or 0))
-    else:
-        raise ValueError(f"无法解析的复数字符串: {s}")
+
 
 
 def EigenvaluesWithBoundaryCondition():
@@ -76,4 +47,3 @@ def EigenvaluesWithBoundaryConditionSingleParameter():
 if __name__ == "__main__":
     EigenvaluesWithBoundaryCondition()
 #   EigenvaluesWithBoundaryConditionSingleParameter()
-

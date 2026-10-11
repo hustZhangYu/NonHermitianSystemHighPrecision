@@ -1,14 +1,12 @@
 # In this code, we construct the Hamiltonain with given parameters.
-# 注意： 我们使用了mpmath进行可调精度的计算 mp.dps=100 表示位数
+# 注意： 我们使用了mpmath进行可调精度的计算 mp.mp.dps=100 表示位数
 # mpmath 不存在矩阵运算结构，所以写循环略显繁琐
 
-import numpy as np
-from scipy.linalg import expm
 import random as rd
 import math
 from matplotlib import pyplot as plt
 import mpmath as mp
-mp.dps=200
+mp.mp.dps=200
 
 pi=mp.pi
 def NHGAA(L,mu,V,phi,alpha,bd):
@@ -116,16 +114,3 @@ if __name__=='__main__':
         plt.subplot(1,2,2)
         plt.plot(a)
     plt.show()
-    
-        
-    
-
-
-
-
-
-
-
-
-
-
